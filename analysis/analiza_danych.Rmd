@@ -6,7 +6,7 @@ site: workflowr::wflow_site
 <br><br><br>
 **Opis**
 
-Zbiór danych CO2 zawiera 84 obserwacje i 5 zmiennych pochodzących z eksperymentu badającego odporność na niską temperaturę trawy z gatunku Echinochloa crus-galli.
+Zbiór danych CO2 zawiera 84 obserwacje i 5 zmiennych pochodzących z eksperymentu badającego odporność na niską temperaturę trawy z gatunku Echinochloa crus-galli
 <br><br><br>
 **Format danych**
 

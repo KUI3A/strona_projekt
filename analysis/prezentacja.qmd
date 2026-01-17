@@ -48,7 +48,7 @@ ulubione gatunki seriali:
 
 ![](zdjecia/seria.png)
 
-## szacunkowy łączny czas spędzany na hobby/zainteresowaniach 
+## szacunkowy łączny czas spędzany na hobby/zainteresowaniach
 ---
 
 ```{r}

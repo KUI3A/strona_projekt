@@ -332,7 +332,7 @@ div.tocify {
   <a href="index.html">strona główna</a>
 </li>
 <li>
-  <a href="cv.html">CV</a>
+  <a href="cvvv.html">CV</a>
 </li>
 <li>
   <a href="analiza_danych.html">Analiza danych</a>
@@ -360,7 +360,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -371,8 +371,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -385,9 +385,9 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>strona_projekt/</code> <span
@@ -410,18 +410,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of
+the R Markdown file created these results, you’ll want to first commit
+it to the Git repo. If you’re still working on the analysis, you can
+ignore this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -512,13 +515,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrong58f5a4b">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree224864f7b47eb03cc7a106faf49d3db019aa03c5targetblank224864fa">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> 58f5a4b
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/KUI3A/strona_projekt/tree/224864f7b47eb03cc7a106faf49d3db019aa03c5" target="_blank">224864f</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrong58f5a4b"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree224864f7b47eb03cc7a106faf49d3db019aa03c5targetblank224864fa"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -527,7 +532,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version 58f5a4b.
+The results in this page were generated with repository version
+<a href="https://github.com/KUI3A/strona_projekt/tree/224864f7b47eb03cc7a106faf49d3db019aa03c5" target="_blank">224864f</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -546,8 +552,17 @@ Ignored files:
     Ignored:    .Rproj.user/
     Ignored:    analysis/prezentacja.html
 
+Untracked files:
+    Untracked:  analysis/cvvv.Rmd
+
 Unstaged changes:
-    Deleted:    README.md
+    Deleted:    Nowy Archiwum WinRARa (ZIP).zip
+    Modified:   analysis/CV.Rmd
+    Modified:   analysis/_site.yml
+    Deleted:    analysis/about.Rmd
+    Modified:   analysis/analiza_danych.Rmd
+    Modified:   analysis/index.Rmd
+    Deleted:    analysis/license.Rmd
 
 </code></pre>
 <p>
@@ -594,10 +609,27 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/KUI3A/strona_projekt/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/analiza_danych.html" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
-58f5a4b
+<a href="https://github.com/KUI3A/strona_projekt/blob/58f5a4bdb5994eecf5ab662bd424505e4ca3a23e/analysis/analiza_danych.Rmd" target="_blank">58f5a4b</a>
 </td>
 <td>
 KUI3A
@@ -620,7 +652,7 @@ wflow_publish("analysis")
 <strong>Opis</strong></p>
 <p>Zbiór danych CO2 zawiera 84 obserwacje i 5 zmiennych pochodzących z
 eksperymentu badającego odporność na niską temperaturę trawy z gatunku
-Echinochloa crus-galli. <br><br><br> <strong>Format danych</strong></p>
+Echinochloa crus-galli <br><br><br> <strong>Format danych</strong></p>
 <p>Obiekt jest ramką danych zawierającą następujące kolumny:<br>
 <strong>Plant</strong> – uporządkowany czynnik identyfikujący każdą
 roślinę<br> <strong>Type</strong> – pochodzenie rośliny: Quebec lub
@@ -663,8 +695,45 @@ ggplot(co2_1, aes(x=Type, y= mean, fill=Treatment)) +
     x=&quot;Typ rośliny&quot;,
     y=&quot;Średnie tempo fotosyntezy  (μmol/m²/s)&quot;
   )</code></pre>
-<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-1-1.png" alt="" width="672" style="display: block; margin: auto;" />
-<br><br> <strong>Interpretacja</strong><br> Rośliny nieschłodzone
+<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-1-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-1-1">
+Past versions of unnamed-chunk-1-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-1-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/figure/analiza_danych.Rmd/unnamed-chunk-1-1.png" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br><br> <strong>Interpretacja</strong><br> Rośliny nieschłodzone
 osiągają wyższe średnie tempo fotosyntezy niż rośliny schłodzone- w
 niższej temperaturze fotosynteza zachodzi wolniej, w wyższej
 szybciej</p>
@@ -683,8 +752,45 @@ ggplot(co2_max, aes(x=Type, y=max, fill=Treatment)) +
     x=&quot;Typ rośliny&quot;,
     y=&quot;Maksymalne tempo fotosyntezy (μmol/m²/s)&quot;
   )</code></pre>
-<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" />
-<br><br> <strong>Interpretacja</strong><br> Rośliny nieschłodzone
+<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-2-1">
+Past versions of unnamed-chunk-2-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-2-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/figure/analiza_danych.Rmd/unnamed-chunk-2-1.png" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br><br> <strong>Interpretacja</strong><br> Rośliny nieschłodzone
 osiągają wyższe maksymalne tempo fotosyntezy niż rośliny schłodzone-
 niska temperatura ogranicza tempo fotosyntezy</p>
 <p><br><br><br><br><br><br><br></p>
@@ -709,8 +815,45 @@ ggplot(co2_temp, aes(x=conc, y=mean_uptake, color= Treatment)) +
     x=&quot;Stężenie CO2&quot;,
     y=&quot;Średnie tempo fotosyntezy (μmol/m²/s)&quot;,
   )</code></pre>
-<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" />
-<br><br> <strong>Interpretacja</strong><br> Na wykresie widać, że dla
+<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
+Past versions of unnamed-chunk-3-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-3-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/figure/analiza_danych.Rmd/unnamed-chunk-3-1.png" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br><br> <strong>Interpretacja</strong><br> Na wykresie widać, że dla
 większości poziomów stężenia CO2 rośliny nieschłodzone osiągają wyższe
 średnie tempo fotosyntezy niż rośliny schłodzone. Oznacza to że obniżona
 temperatura ogranicza intensywność fotosyntezy</p>
@@ -735,10 +878,47 @@ ggplot(co2_plants, aes(x= conc, y= uptake, color=Plant)) +
     x= &quot;Stężenie CO2&quot;,
     y= &quot;Tempo fotosyntezy (μmol/m²/s)&quot;,
   )</code></pre>
-<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" />
-<br><br> <strong>Interpretacja</strong><br> Wzrost stężenia CO2 powoduje
-zwiększenie tempa fotosyntezy u wszystkich roślin, jednak reakcja różni
-się między poszczególnymi roślinami</p>
+<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-4-1">
+Past versions of unnamed-chunk-4-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-4-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/figure/analiza_danych.Rmd/unnamed-chunk-4-1.png" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br><br> <strong>Interpretacja</strong><br> Wzrost stężenia CO2
+powoduje zwiększenie tempa fotosyntezy u wszystkich roślin, jednak
+reakcja różni się między poszczególnymi roślinami</p>
 <p><br><br><br><br><br><br><br></p>
 </div>
 <div id="rozkład-tempa-fotosyntezy-w-zależności-od-regionu"
@@ -758,9 +938,46 @@ ggplot(co2_region, aes(x= uptake, fill= level)) +
     x= &quot;Tempo fotosyntezy (μmol/m²/s))&quot;,
     y= &quot;Liczba obserwacji&quot;,
   )</code></pre>
-<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-5-1.png" alt="" width="672" style="display: block; margin: auto;" />
-<br><br> <strong>Interpretacja</strong><br> tempo fotosyntezy różni się
-między regionami. w Quebec występują wyższe wartości uptake niz w
+<p><img src="figure/analiza_danych.Rmd/unnamed-chunk-5-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/3038b371751d7c49e8654d11c32ea419ea28a6ab/docs/figure/analiza_danych.Rmd/unnamed-chunk-5-1.png" target="_blank">3038b37</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br><br> <strong>Interpretacja</strong><br> tempo fotosyntezy różni
+się między regionami. w Quebec występują wyższe wartości uptake niz w
 Mississippi. Pochodzenie roślin wpływa na intensywność fotosyntezy.</p>
 <hr />
 <br>
