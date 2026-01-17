@@ -1,0 +1,56 @@
+---
+title: "cv"
+site: workflowr::wflow_site
+---
+
+
+
+---
+
+---
+
+
+
+**Uniwersytet Przyrodniczy w Poznaniu**  
+Kierunek: Informatyka i Inżynieria Danych  
+2023 – obecnie (III rok)
+
+
+**Technikum Środowiska w Poznaniu**  
+Profil: Technik urządzeń i systemów energetyki odnawialnej.
+
+
+---
+
+## Umiejętności
+
+
+Programowanie (C++, C++,Python,R,SQL)<br>
+Obsługa pakietu Microsoft Office
+
+---
+
+## umiejetnosci miękkie
+-Analityczne myślenie<br>
+-Umiejętność rozwiązywania problemów<br>
+-Dobra organizacja pracy<br>
+-Komunikatywność<br>
+-Umiejętność pracy zespołowej<br>
+
+---
+
+## Języki obce
+
+- Polski: C2   
+- Angielski: B2/C1 
+
+---
+
+## doswiadczenie
+
+Pracownik sklepu Dino Polska.
+lipiec-sierpien 2024
+
+---
+
+

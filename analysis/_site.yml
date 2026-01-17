@@ -1,14 +1,17 @@
 name: "strona_projekt"
 output_dir: ../docs
 navbar:
-  title: "strona_projekt"
+  title: "Jakub Kwaśniewski"
   left:
-  - text: Home
+  - text: "strona główna"
     href: index.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
+  - text: "CV"
+    href: cv.html
+  - text: "Analiza danych"
+    href: analiza_danych.html
+  - text: "prezentacja"
+    href: prezentacja.html
+
 output:
   workflowr::wflow_html:
     toc: yes

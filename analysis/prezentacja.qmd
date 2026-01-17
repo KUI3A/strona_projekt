@@ -1,0 +1,77 @@
+---
+title: "moje pasje i zainteresowania"
+format: revealjs
+---
+## Moje pasje i zainteresowania
+
+⚽ Piłka nożna  
+🎮 Gry komputerowe  
+📺 Seriale
+
+## ⚽ Piłka nożna
+
+- gram w piłke od 7 roku życia z przerwami
+- gram amatorsko w piłkę nożną w klubie Clescevia Kleszczewo  
+- występuję w lidze okręgowej  
+- gram na obronie  
+- trenuję 3 razy w tygodniu + mecz w weekend
+
+## 🎮 Gry komputerowe
+
+ulubione gatunki gier
+  
+  
+- gry strategiczne  
+- RPG
+- symulatory sportowe
+- FPS
+- akcji
+
+## 🎮 Gry komputerowe
+
+
+![](zdjecia/eu4556.png)
+
+
+## 📺 Seriale
+
+ulubione gatunki seriali:
+
+- science-fiction
+- dramaty  
+- akcję
+- przygodowe
+
+## 📺 Seriale
+
+
+
+![](zdjecia/seria.png)
+
+## szacunkowy łączny czas spędzany na hobby/zainteresowaniach 
+---
+
+```{r}
+library(ggplot2)
+
+
+dni <- c("Pon", "Wt", "Śr", "Czw", "Pt", "Sob", "Ndz")
+razem<- c(6,4,4,6,5,8,8)
+
+dane <- data.frame(dzien = dni, godziny = razem)
+dane$dzien <- factor(dane$dzien, levels = dni)
+
+ggplot(dane, aes(x = dzien, y = godziny)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  xlab("dzień tygodnia") +
+  ylab("godziny")
+
+
+
+```
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+---
+title: "analiza danych"
+site: workflowr::wflow_site
+---
+**Analiza Danych w R**
+<br><br><br>
+**Opis**
+
+Zbiór danych CO2 zawiera 84 obserwacje i 5 zmiennych pochodzących z eksperymentu badającego odporność na niską temperaturę trawy z gatunku Echinochloa crus-galli.
+<br><br><br>
+**Format danych**
+
+Obiekt jest ramką danych zawierającą następujące kolumny:<br>
+**Plant** – uporządkowany czynnik identyfikujący każdą roślinę<br>
+**Type** – pochodzenie rośliny: Quebec lub Mississippi<br>
+**Treatment** – sposób traktowania rośliny:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -**nonchilled** – niechłodzona<br>
+&nbsp;&nbsp;&nbsp;&nbsp;  -**chilled** – schłodzona,<br>
+**conc** – stężenie dwutlenku węgla w otoczeniu (ml/l)<br>
+**uptake** – tempo pobierania CO₂ (μmol/m²/s)<br>
+<br><br><br>
+**Szczegóły eksperymentu**
+Tempo pobierania CO₂ zmierzono dla sześciu roślin pochodzących z Quebecu oraz sześciu z Mississippi przy różnych poziomach stężenia CO₂ w powietrzu.
+
+Połowa roślin z każdej grupy została schłodzona przez noc przed przeprowadzeniem eksperymentu, aby sprawdzić wpływ temperatury na proces fotosyntezy.
+
+Zbiór danych był pierwotnie częścią pakietu nlme, który udostępnia dodatkowe metody obsługi danych pogrupowanych.
+<br><br><br>
+**Źródło danych**
+
+Potvin, C., Lechowicz, M. J., Tardif, S. (1990)
+The statistical analysis of ecophysiological response curves obtained from experiments involving repeated measures, Ecology, 71, 1389–1400.
+
+Pinheiro, J. C., Bates, D. M. (2000)
+Mixed-effects Models in S and S-PLUS, Springer.
+<br><br><br><br><br><br>
+
+
+## Średnie tempo fotosyntezy w zależności od typu rośliny i traktowania
+
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+
+co2_1=CO2 %>%
+  group_by(Type,Treatment) %>%
+  summarise(mean= mean(uptake))
+
+ggplot(co2_1, aes(x=Type, y= mean, fill=Treatment)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Średnie tempo fotosyntezy w zależności od typu rośliny i traktowania",
+    x="Typ rośliny",
+    y="Średnie tempo fotosyntezy  (μmol/m²/s)"
+  )
+```
+<br><br>
+**Interpretacja**<br>
+Rośliny nieschłodzone osiągają wyższe średnie tempo fotosyntezy niż rośliny schłodzone- w niższej temperaturze fotosynteza zachodzi wolniej, w wyższej szybciej  
+
+
+<br><br><br><br><br><br><br>
+
+## Maksymalne tempo fotosyntezy w grupach
+```{r, message=FALSE}
+co2_max= CO2 %>%
+  group_by(Type, Treatment) %>%
+  summarise(max=max(uptake))
+
+ggplot(co2_max, aes(x=Type, y=max, fill=Treatment)) +
+  geom_col(position = "dodge") +
+  labs(
+    title="Maksymalne tempo fotosyntezy w grupach",
+    x="Typ rośliny",
+    y="Maksymalne tempo fotosyntezy (μmol/m²/s)"
+  )
+
+```
+<br><br>
+**Interpretacja**<br>
+Rośliny nieschłodzone osiągają wyższe maksymalne tempo fotosyntezy niż rośliny schłodzone- niska temperatura ogranicza tempo fotosyntezy
+
+
+<br><br><br><br><br><br><br>
+
+
+
+
+## Wpływ temperatury na tempo fotosyntezy w zależności od stężenia CO2
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+co2_temp= CO2 %>%
+  group_by(conc, Treatment) %>%
+  summarise(mean_uptake = mean(uptake))
+
+ggplot(co2_temp, aes(x=conc, y=mean_uptake, color= Treatment)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title="Wpływ temperatury na tempo fotosyntezy w zależności od stężenia CO2",
+    x="Stężenie CO2",
+    y="Średnie tempo fotosyntezy (μmol/m²/s)",
+  )
+```
+<br><br>
+**Interpretacja**<br>
+Na wykresie widać, że dla większości poziomów stężenia CO2 rośliny nieschłodzone  osiągają wyższe średnie tempo fotosyntezy niż rośliny schłodzone. Oznacza to że obniżona temperatura ogranicza intensywność fotosyntezy
+
+
+<br><br><br><br><br><br><br>
+
+
+
+## Reakcja wybranych roślin na wzrost stężenia CO2
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+
+co2_plants= CO2 %>%
+  filter(Plant== "Qn1" | Plant== "Qn2" | Plant== "Qn3" | Plant== "Mn1" | Plant== "Mn2" | Plant== "Mn3"|
+         Plant== "Qc1" | Plant== "Qc2" | Plant== "Qc3" | Plant== "Mc1" | Plant== "Mc2" | Plant== "Mc3")
+
+ggplot(co2_plants, aes(x= conc, y= uptake, color=Plant)) +
+  geom_line() +
+  geom_point() +
+  labs(
+    title= "Reakcja wybranych roślin na wzrost stężenia CO2",
+    x= "Stężenie CO2",
+    y= "Tempo fotosyntezy (μmol/m²/s)",
+  )
+```
+<br><br>
+**Interpretacja**<br>
+Wzrost stężenia CO2 powoduje zwiększenie tempa fotosyntezy u wszystkich roślin, jednak reakcja  różni się między poszczególnymi roślinami 
+
+<br><br><br><br><br><br><br>
+
+
+
+## Rozkład tempa fotosyntezy w zależności od regionu
+```{r, message=FALSE}
+library(dplyr)
+library(ggplot2)
+
+co2_region = CO2 %>%
+mutate(level = ifelse(uptake < 25, "niskie tempo", "wysokie tempo"))
+
+ggplot(co2_region, aes(x= uptake, fill= level)) +
+  geom_histogram(color = "black", alpha = 0.7) +
+  facet_wrap(~ Type) +
+  labs(
+    title= "Rozkład tempa fotosyntezy w zależności od regionu",
+    x= "Tempo fotosyntezy (μmol/m²/s))",
+    y= "Liczba obserwacji",
+  )
+```
+<br><br>
+**Interpretacja**<br>
+tempo fotosyntezy różni się między regionami. w Quebec występują wyższe wartości uptake niz w Mississippi. Pochodzenie roślin wpływa na intensywność fotosyntezy.
+
+
+
+
+
+
+
+
+
+
+
+
+---

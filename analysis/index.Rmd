@@ -1,11 +1,22 @@
 ---
-title: "Home"
+title: "strona głowna"
 site: workflowr::wflow_site
-output:
-  workflowr::wflow_html:
-    toc: false
-editor_options:
-  chunk_output_type: console
 ---
 
-Welcome to my research website.
+
+
+Nazywam się **Jakub Kwaśniewski**.  
+Studiuję na uczelni **Uniwersytet Przyrodniczy w Poznaniu** 
+na kierunku **Informatyka i inżynieria danych ** 
+
+
+
+![](zdjecia/upp.png)
+
+
+<br><br><br><br>
+
+strona została wykonana w workflowr
+---
+
+
