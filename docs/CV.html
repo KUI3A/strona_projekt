@@ -360,7 +360,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -371,8 +371,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -385,9 +385,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>strona_projekt/</code> <span
@@ -410,36 +410,33 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of
-the R Markdown file created these results, you’ll want to first commit
-it to the Git repo. If you’re still working on the analysis, you can
-ignore this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree1805f9d9a16866a41a7205ee51ab506e7d7a2a9ctargetblank1805f9da">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree47f940826830123c7e19383b1f71d4b5acf840f1targetblank47f9408a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/KUI3A/strona_projekt/tree/1805f9d9a16866a41a7205ee51ab506e7d7a2a9c" target="_blank">1805f9d</a>
+<a href="https://github.com/KUI3A/strona_projekt/tree/47f940826830123c7e19383b1f71d4b5acf840f1" target="_blank">47f9408</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree1805f9d9a16866a41a7205ee51ab506e7d7a2a9ctargetblank1805f9da"
+id="strongRepositoryversionstrongahrefhttpsgithubcomKUI3Astronaprojekttree47f940826830123c7e19383b1f71d4b5acf840f1targetblank47f9408a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -449,7 +446,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/KUI3A/strona_projekt/tree/1805f9d9a16866a41a7205ee51ab506e7d7a2a9c" target="_blank">1805f9d</a>.
+<a href="https://github.com/KUI3A/strona_projekt/tree/47f940826830123c7e19383b1f71d4b5acf840f1" target="_blank">47f9408</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -470,8 +467,8 @@ Ignored files:
 
 Unstaged changes:
     Deleted:    Nowy Archiwum WinRARa (ZIP).zip
-    Modified:   analysis/CV.Rmd
-    Modified:   analysis/_site.yml
+    Deleted:    analysis/about.Rmd
+    Deleted:    analysis/license.Rmd
 
 </code></pre>
 <p>
@@ -515,6 +512,57 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/47f940826830123c7e19383b1f71d4b5acf840f1/analysis/CV.Rmd" target="_blank">47f9408</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+<td>
+Update CV
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/KUI3A/strona_projekt/blob/ecada0cb4f96c57d4468cd3952cd6ed1c2aee062/analysis/CV.Rmd" target="_blank">ecada0c</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+<td>
+Update CV
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/KUI3A/strona_projekt/ecada0cb4f96c57d4468cd3952cd6ed1c2aee062/docs/CV.html" target="_blank">ecada0c</a>
+</td>
+<td>
+KUI3A
+</td>
+<td>
+2026-01-17
+</td>
+<td>
+Update CV
+</td>
+</tr>
 <tr>
 <td>
 html
@@ -580,7 +628,7 @@ zespołowej<br></p>
 <div id="języki-obce" class="section level2">
 <h2>Języki obce</h2>
 <ul>
-<li>Polski:C2<br />
+<li>Polski: C2<br />
 </li>
 <li>Angielski: B2/C1</li>
 </ul>
